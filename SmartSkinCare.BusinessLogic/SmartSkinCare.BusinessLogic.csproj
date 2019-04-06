@@ -18,11 +18,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartSkinCare.Entities\SmartSkinCare.Entities.csproj" />
+    <ProjectReference Include="..\SmartSkinCare.DataAccessLayer\SmartSkinCare.DataAccessLayer.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.4.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
   </ItemGroup>
 </Project>
