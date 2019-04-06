@@ -11,11 +11,6 @@ namespace SmartSkinCare.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        public ValuesController(ApplicationContext context)
-        {
-            context.SaveChanges();
-        }
-
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()

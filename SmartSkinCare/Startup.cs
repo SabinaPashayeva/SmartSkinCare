@@ -6,19 +6,13 @@ using System.Reflection;
 using System.Text;
 using System.Configuration;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
-using SmartSkinCare.UserService.Authentication;
-using Microsoft.AspNetCore.Identity;
-using SmartSkinCare.Entities;
-using SmartSkinCare.DataAccessLayer;
-using Microsoft.EntityFrameworkCore;
+using SmartSkinCare.DI;
 
 namespace SmartSkinCare
 {
@@ -37,36 +31,7 @@ namespace SmartSkinCare
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<ApplicationContext>(options => options
-                .UseSqlServer(Configuration.GetConnectionString("SkinCareDb")));
-            services.AddIdentity<ApplicationUser, IdentityRole>(o => o.Password.RequireNonAlphanumeric = false)
-                .AddEntityFrameworkStores<ApplicationContext>()
-                .AddDefaultTokenProviders();
-
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
-            })
-            .AddJwtBearer(options =>
-            {
-                options.RequireHttpsMetadata = false;
-                options.SaveToken = true;
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidIssuer = AuthenticationSettings.ISSUER,
-
-                    ValidateAudience = true,
-                    ValidAudience = AuthenticationSettings.AUDIENCE,
-                    ValidateLifetime = true,
-
-                    IssuerSigningKey = AuthenticationSettings.GetSymmetricSecurityKey(),
-                    ValidateIssuerSigningKey = true,
-                };
-            });
+            services.AddServiceRegistrator(Configuration);
 
             services.AddSwaggerGen(c =>
             {

@@ -9,6 +9,6 @@ namespace SmartSkinCare.Entities
         public string Name { get; set; }
         public string Country { get; set; }
 
-        public IEnumerable<Cream> Creams { get; set; }
+        public virtual IEnumerable<Cream> Creams { get; set; }
     }
 }

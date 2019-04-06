@@ -7,4 +7,19 @@
   <ItemGroup>
     <Compile Remove="Class1.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mapper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartSkinCare.UserService\SmartSkinCare.BusinessLogic.csproj" />
+    <ProjectReference Include="..\SmartSkinCare.DataAccessLayer\SmartSkinCare.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\SmartSkinCare.Entities\SmartSkinCare.Entities.csproj" />
+  </ItemGroup>
 </Project>

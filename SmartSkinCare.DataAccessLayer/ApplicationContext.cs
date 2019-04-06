@@ -9,7 +9,9 @@ namespace SmartSkinCare.DataAccessLayer
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
-        { }
+        {
+            Database.EnsureCreated();
+        }
 
         public DbSet<Cream> Creams { get; set; }
         public DbSet<Manufacturer> Manufacturers { get; set; }

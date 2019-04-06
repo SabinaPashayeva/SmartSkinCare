@@ -9,6 +9,8 @@ namespace SmartSkinCare.Entities
         public string TypeOfSkin { get; set; }
 
         public int ManufacturerId { get; set; }
-        public Manufacturer Manufacturer { get; set; }
+        public virtual Manufacturer Manufacturer { get; set; }
+
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

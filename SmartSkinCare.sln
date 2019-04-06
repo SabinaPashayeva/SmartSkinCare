@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSkinCare.DI", "SmartSk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSkinCare.Infrastructure", "SmartSkinCare.Infrastructure\SmartSkinCare.Infrastructure.csproj", "{26016B4D-4D3B-451E-A2E3-A3283F74E5AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSkinCare.UserService", "SmartSkinCare.UserService\SmartSkinCare.UserService.csproj", "{9A55E48D-C35B-4D4B-B470-879E8159BCD7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSkinCare.BusinessLogic", "SmartSkinCare.UserService\SmartSkinCare.BusinessLogic.csproj", "{9A55E48D-C35B-4D4B-B470-879E8159BCD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

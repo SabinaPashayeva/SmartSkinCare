@@ -2,7 +2,7 @@
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-namespace SmartSkinCare.UserService.Authentication
+namespace SmartSkinCare.BusinessLogic.Authentication
 {
     public static class AuthenticationSettings
     {

@@ -8,6 +8,6 @@ namespace SmartSkinCare.Entities
         public double SkinHumidityValue { get; set; }
         public DateTimeOffset DateTime { get; set; }
 
-        public ApplicationUser ApplicationUser { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace SmartSkinCare.UserService.Authentication
+namespace SmartSkinCare.BusinessLogic.Authentication
 {
     public class AuthenticationModel
     {

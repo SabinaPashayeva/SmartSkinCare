@@ -7,34 +7,36 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using SmartSkinCare.BusinessLogic.Abstractions;
+using SmartSkinCare.BusinessLogic.Authentication;
+using SmartSkinCare.DataAccessLayer.Abstractions;
 using SmartSkinCare.Entities;
 
-namespace SmartSkinCare.UserService.Authentication
+namespace SmartSkinCare.BusinessLogic
 {
     public class UserAuthorizationService : IAuthorizationService
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly IUserRepository _userRepository;
 
         public UserAuthorizationService(UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager,
+            IUserRepository userRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _userRepository = userRepository;
         }
 
         public async Task<string> RegisterAsync(ApplicationUser userRegisterRequestModel)
         {
-            var user = new ApplicationUser
-            {
-                Email = userRegisterRequestModel.Email,
-                UserName = userRegisterRequestModel.UserName
-            };
+            var result = await _userManager.CreateAsync(userRegisterRequestModel,
+                userRegisterRequestModel.Password);
 
-            var result = await _userManager.CreateAsync(user, userRegisterRequestModel.Password);
             if (result.Succeeded)
             {
-                await _signInManager.SignInAsync(user, false);
+                await _signInManager.SignInAsync(userRegisterRequestModel, false);
 
                 return await Login(new AuthenticationModel
                 {

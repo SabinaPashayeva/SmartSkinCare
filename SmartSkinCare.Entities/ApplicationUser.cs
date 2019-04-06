@@ -10,7 +10,8 @@ namespace SmartSkinCare.Entities
         public DateTimeOffset DateOfBirth { get; set; }
         public string Role { get; set; }
 
-        public IEnumerable<SkinHumidity> SkinHumidities { get; set; }
-        public IEnumerable<SkinOiliness> SkinOilinesses { get; set; }
+        public virtual IEnumerable<SkinHumidity> SkinHumidities { get; set; }
+        public virtual IEnumerable<SkinOiliness> SkinOilinesses { get; set; }
+        public virtual IEnumerable<Cream> Creams { get; set; }
     }
 }

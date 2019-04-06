@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
+using SmartSkinCare.BusinessLogic.Authentication;
 using SmartSkinCare.Entities;
 
-namespace SmartSkinCare.UserService.Authentication
+namespace SmartSkinCare.BusinessLogic.Abstractions
 {
     public interface IAuthorizationService
     {
