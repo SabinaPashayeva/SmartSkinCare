@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSkinCare.DataAccessLay
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSkinCare.Entities", "SmartSkinCare.Entities\SmartSkinCare.Entities.csproj", "{6548A491-245C-44C0-86F3-6A5E70984D15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSkinCare.DI", "SmartSkinCare.DI\SmartSkinCare.DI.csproj", "{B58A0DFF-9589-4104-B0C1-40A43CBC29AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSkinCare.Infrastructure", "SmartSkinCare.Infrastructure\SmartSkinCare.Infrastructure.csproj", "{26016B4D-4D3B-451E-A2E3-A3283F74E5AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSkinCare.UserService", "SmartSkinCare.UserService\SmartSkinCare.UserService.csproj", "{9A55E48D-C35B-4D4B-B470-879E8159BCD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +31,17 @@ Global
 		{6548A491-245C-44C0-86F3-6A5E70984D15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6548A491-245C-44C0-86F3-6A5E70984D15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6548A491-245C-44C0-86F3-6A5E70984D15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B58A0DFF-9589-4104-B0C1-40A43CBC29AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B58A0DFF-9589-4104-B0C1-40A43CBC29AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B58A0DFF-9589-4104-B0C1-40A43CBC29AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B58A0DFF-9589-4104-B0C1-40A43CBC29AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26016B4D-4D3B-451E-A2E3-A3283F74E5AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26016B4D-4D3B-451E-A2E3-A3283F74E5AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26016B4D-4D3B-451E-A2E3-A3283F74E5AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26016B4D-4D3B-451E-A2E3-A3283F74E5AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A55E48D-C35B-4D4B-B470-879E8159BCD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A55E48D-C35B-4D4B-B470-879E8159BCD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A55E48D-C35B-4D4B-B470-879E8159BCD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A55E48D-C35B-4D4B-B470-879E8159BCD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

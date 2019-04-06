@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SmartSkinCare.DataAccessLayer;
 
 namespace SmartSkinCare.Controllers
 {
@@ -10,6 +11,11 @@ namespace SmartSkinCare.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        public ValuesController(ApplicationContext context)
+        {
+            context.SaveChanges();
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()

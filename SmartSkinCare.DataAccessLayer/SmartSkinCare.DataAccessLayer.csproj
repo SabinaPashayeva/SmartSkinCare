@@ -7,4 +7,15 @@
   <ItemGroup>
     <Compile Remove="Class1.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartSkinCare.Entities\SmartSkinCare.Entities.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstractions\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
 </Project>

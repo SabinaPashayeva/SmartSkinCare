@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="Abstractions.cs" />
+    <Compile Remove="Abstractions\IUserService.cs" />
+    <Compile Remove="AuthenticationUserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstractions\" />
+    <Folder Include="Models\" />
+    <Folder Include="Authentication\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartSkinCare.Entities\SmartSkinCare.Entities.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.4.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
+  </ItemGroup>
+</Project>
