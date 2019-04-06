@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using SmartSkinCare.BusinessLogic.Authentication;
 using SmartSkinCare.Entities;
 
@@ -7,8 +8,8 @@ namespace SmartSkinCare.BusinessLogic.Abstractions
 {
     public interface IAuthorizationService
     {
-        Task<string> RegisterAsync(ApplicationUser userRegisterRequestModel);
-        Task<string> Login(AuthenticationModel model);
-        Task LogOff();
+        Task RegisterAsync(ApplicationUser userRegisterRequestModel, HttpResponse response);
+        Task Login(AuthenticationModel model, HttpResponse response);
+        Task LogOut();
     }
 }

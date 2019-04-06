@@ -9,7 +9,7 @@ namespace SmartSkinCare.DI.Mapper
     {
         public AppProfile()
         {
-            CreateMap<Cream, CreamDTO>();
+            CreateMap<Cream, CreamDTO>().ReverseMap();
         }
     }
 }

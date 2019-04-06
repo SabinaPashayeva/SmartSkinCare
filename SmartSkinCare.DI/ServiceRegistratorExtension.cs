@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using SmartSkinCare.BusinessLogic;
 using SmartSkinCare.BusinessLogic.Abstractions;
 using SmartSkinCare.BusinessLogic.Authentication;
 using SmartSkinCare.BusinessLogic.Services;
@@ -54,6 +55,7 @@ namespace SmartSkinCare.DI
 
             services.AddAutoMapper();
 
+            services.AddScoped<IAuthorizationService, UserAuthorizationService>();
             services.AddScoped<ICreamRepository, CreamRepository>();
             services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
             services.AddScoped<IUserRepository, UserRepository>();

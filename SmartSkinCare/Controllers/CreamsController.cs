@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SmartSkinCare.BusinessLogic.Abstractions;
@@ -9,7 +10,7 @@ namespace SmartSkinCare.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CreamsController
+    public class CreamsController : ControllerBase
     {
         private readonly ICreamService _creamService;
 
@@ -19,6 +20,8 @@ namespace SmartSkinCare.API.Controllers
         }
 
         // GET api/creams
+        [ProducesResponseType(200)]
+        [ProducesResponseType(401)]
         [HttpGet]
         public ActionResult<IEnumerable<CreamDTO>> Get()
         {

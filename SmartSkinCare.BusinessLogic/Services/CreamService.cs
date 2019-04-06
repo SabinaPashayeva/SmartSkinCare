@@ -48,8 +48,6 @@ namespace SmartSkinCare.BusinessLogic.Services
             _creamRepository.Save();
         }
 
-        public void Save() { _creamRepository.Save(); }
-
         public IEnumerable<CreamDTO> GetAllCreams()
         {
             var allCreams = new List<CreamDTO>();

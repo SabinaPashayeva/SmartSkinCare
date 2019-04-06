@@ -10,6 +10,5 @@ namespace SmartSkinCare.BusinessLogic.Abstractions
         void UpdateCream(CreamDTO creamDto);
         void RemoveCream(CreamDTO creamDto);
         IEnumerable<CreamDTO> GetAllCreams();
-        void Save();
     }
 }

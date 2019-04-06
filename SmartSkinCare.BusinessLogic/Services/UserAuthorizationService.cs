@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
@@ -29,7 +30,8 @@ namespace SmartSkinCare.BusinessLogic
             _userRepository = userRepository;
         }
 
-        public async Task<string> RegisterAsync(ApplicationUser userRegisterRequestModel)
+        public async Task RegisterAsync(ApplicationUser userRegisterRequestModel,
+            HttpResponse response)
         {
             var result = await _userManager.CreateAsync(userRegisterRequestModel,
                 userRegisterRequestModel.Password);
@@ -37,18 +39,18 @@ namespace SmartSkinCare.BusinessLogic
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(userRegisterRequestModel, false);
-
-                return await Login(new AuthenticationModel
+                await Login(new AuthenticationModel
                 {
                     UserName = userRegisterRequestModel.UserName,
                     Password = userRegisterRequestModel.Password
-                });
+                }, response);
             }
 
-            return "Result validation failed!";
+            await response.WriteAsync("Result validation failed!");
         }
 
-        public async Task<string> Login(AuthenticationModel model)
+        public async Task Login(AuthenticationModel model,
+            HttpResponse response)
         {
             var user = await _userManager.FindByNameAsync(model.UserName);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
@@ -69,20 +71,26 @@ namespace SmartSkinCare.BusinessLogic
 
                 var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
 
-                var response = new
+                response.ContentType = "application/json";
+                var responseJson = new
                 {
                     access_token = encodedJwt,
                     username = user.UserName
                 };
 
-                return JsonConvert.SerializeObject(response,
-                    new JsonSerializerSettings { Formatting = Formatting.Indented });
+                await response.WriteAsync(JsonConvert.SerializeObject(responseJson,
+                    new JsonSerializerSettings
+                    {
+                        Formatting = Formatting.Indented
+                    }));
+
+                return;
             }
 
-            return "Wrong credentials!";
+            await response.WriteAsync("Wrong credentials!");
         }
 
-        public async Task LogOff()
+        public async Task LogOut()
         {
             await _signInManager.SignOutAsync();
         }
