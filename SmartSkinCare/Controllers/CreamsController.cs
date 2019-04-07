@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SmartSkinCare.BusinessLogic;
 using SmartSkinCare.BusinessLogic.Abstractions;
 using SmartSkinCare.BusinessLogic.Models;
-using SmartSkinCare.DI;
 
 namespace SmartSkinCare.API.Controllers
 {

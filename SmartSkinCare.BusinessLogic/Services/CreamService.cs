@@ -14,16 +14,19 @@ namespace SmartSkinCare.BusinessLogic.Services
         private readonly ICreamRepository _creamRepository;
         private readonly IManufacturerRepository _manufacturerRepository;
         private readonly IUserRepository _userRepository;
+        private readonly UserContext _userContext;
         private readonly IMapper _mapper;
 
         public CreamService(ICreamRepository creamRepository,
             IManufacturerRepository manufacturerRepository,
             IUserRepository userRepository,
+            UserContext userContext,
             IMapper mapper)
         {
             _creamRepository = creamRepository;
             _manufacturerRepository = manufacturerRepository;
             _userRepository = userRepository;
+            _userContext = userContext;
             _mapper = mapper;
         }
 
@@ -59,6 +62,13 @@ namespace SmartSkinCare.BusinessLogic.Services
             }
 
             return allCreams;
+        }
+
+        public IEnumerable<CreamDTO> GetCreamsOfUser()
+        {
+            var allCreams = GetAllCreams();
+
+            return allCreams.Where(c => c.UserId == _userContext.UserId).ToList();
         }
 
         private Cream GetEntityFromDto(CreamDTO creamDto)

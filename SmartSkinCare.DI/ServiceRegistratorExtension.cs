@@ -10,6 +10,7 @@ using SmartSkinCare.BusinessLogic;
 using SmartSkinCare.BusinessLogic.Abstractions;
 using SmartSkinCare.BusinessLogic.Authentication;
 using SmartSkinCare.BusinessLogic.Services;
+using SmartSkinCare.BusinessLogic.SkinAnalyser;
 using SmartSkinCare.DataAccessLayer;
 using SmartSkinCare.DataAccessLayer.Abstractions;
 using SmartSkinCare.Entities;
@@ -65,6 +66,8 @@ namespace SmartSkinCare.DI
             services.AddScoped<ISkinHumidityService, SkinHumidityService>();
             services.AddScoped<ISkinOilinessService, SkinOilinessService>();
             services.AddScoped<UserContext>();
+            services.AddScoped<ISkinAnalyser, SkinAnalyser>();
+            services.AddScoped<IRecommendationService, RecommendationService>();
 
             return services;
         }

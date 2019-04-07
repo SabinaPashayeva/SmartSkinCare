@@ -38,7 +38,7 @@ namespace SmartSkinCare.BusinessLogic.Services
         {
             if (string.IsNullOrEmpty(userId))
             {
-                return default(IEnumerable<SkinOilinessDTO>);
+                return default(ICollection<SkinOilinessDTO>);
             }
 
             var oilinessesOfUser = _oilinessRepository
@@ -46,7 +46,7 @@ namespace SmartSkinCare.BusinessLogic.Services
 
             if (oilinessesOfUser == null)
             {
-                return default(IEnumerable<SkinOilinessDTO>);
+                return default(ICollection<SkinOilinessDTO>);
             }
 
             try
@@ -63,7 +63,7 @@ namespace SmartSkinCare.BusinessLogic.Services
             catch (Exception exc)
             {
                 Console.WriteLine(exc.StackTrace);
-                return default(IEnumerable<SkinOilinessDTO>);
+                return default(ICollection<SkinOilinessDTO>);
             }
         }
 

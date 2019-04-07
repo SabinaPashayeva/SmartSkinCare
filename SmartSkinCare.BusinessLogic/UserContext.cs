@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using SmartSkinCare.BusinessLogic.Abstractions;
-using SmartSkinCare.Entities;
 
-namespace SmartSkinCare.DI
+namespace SmartSkinCare.BusinessLogic
 {
     public class UserContext
     {
