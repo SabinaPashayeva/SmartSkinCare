@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace SmartSkinCare
+namespace SmartSkinCare.API
 {
     public class Program
     {

@@ -7,7 +7,6 @@
   <ItemGroup>
     <Compile Remove="Class1.cs" />
     <Compile Remove="Abstractions.cs" />
-    <Compile Remove="Abstractions\IUserService.cs" />
     <Compile Remove="AuthenticationUserService.cs" />
   </ItemGroup>
   <ItemGroup>

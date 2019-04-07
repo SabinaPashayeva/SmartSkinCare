@@ -15,4 +15,7 @@
     <ProjectReference Include="..\SmartSkinCare.DI\SmartSkinCare.DI.csproj" />
     <ProjectReference Include="..\SmartSkinCare.BusinessLogic\SmartSkinCare.BusinessLogic.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Swagger\" />
+  </ItemGroup>
 </Project>

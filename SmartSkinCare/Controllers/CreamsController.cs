@@ -1,22 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SmartSkinCare.BusinessLogic.Abstractions;
 using SmartSkinCare.BusinessLogic.Models;
+using SmartSkinCare.DI;
 
 namespace SmartSkinCare.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CreamsController : ControllerBase
     {
         private readonly ICreamService _creamService;
+        private readonly UserContext _userContext;
 
-        public CreamsController(ICreamService creamService)
+        public CreamsController(ICreamService creamService, UserContext userContext)
         {
             _creamService = creamService;
+            _userContext = userContext;
         }
 
         // GET api/creams

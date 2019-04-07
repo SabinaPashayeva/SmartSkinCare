@@ -58,7 +58,8 @@ namespace SmartSkinCare.BusinessLogic
                 var claims = new List<Claim>
                     {
                         new Claim(ClaimsIdentity.DefaultNameClaimType, user.UserName),
-                        new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role)
+                        new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role),
+                        new Claim(ClaimTypes.Sid, user.Id)
                     };
 
                 var jwtSecurityToken = new JwtSecurityToken(

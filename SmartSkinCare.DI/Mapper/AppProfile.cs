@@ -10,6 +10,9 @@ namespace SmartSkinCare.DI.Mapper
         public AppProfile()
         {
             CreateMap<Cream, CreamDTO>().ReverseMap();
+            CreateMap<Manufacturer, ManufacturerDTO>().ReverseMap();
+            CreateMap<SkinHumidity, SkinHumidityDTO>().ReverseMap();
+            CreateMap<SkinOiliness, SkinOilinessDTO>().ReverseMap();
         }
     }
 }

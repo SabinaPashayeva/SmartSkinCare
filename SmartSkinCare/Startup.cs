@@ -14,7 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using SmartSkinCare.DI;
 
-namespace SmartSkinCare
+namespace SmartSkinCare.API
 {
     public class Startup
     {
@@ -40,6 +40,7 @@ namespace SmartSkinCare
                     Title = "SmartSkinCare",
                     Version = "v1"
                 });
+                c.OperationFilter<CustomHeaderFilter>();
             });
         }
 

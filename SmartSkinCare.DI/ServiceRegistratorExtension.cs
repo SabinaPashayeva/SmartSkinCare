@@ -33,7 +33,6 @@ namespace SmartSkinCare.DI
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
             })
             .AddJwtBearer(options =>
             {
@@ -54,12 +53,18 @@ namespace SmartSkinCare.DI
             });
 
             services.AddAutoMapper();
+            services.AddHttpContextAccessor();
 
             services.AddScoped<IAuthorizationService, UserAuthorizationService>();
             services.AddScoped<ICreamRepository, CreamRepository>();
             services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICreamService, CreamService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IManufacturerService, ManufacturerService>();
+            services.AddScoped<ISkinHumidityService, SkinHumidityService>();
+            services.AddScoped<ISkinOilinessService, SkinOilinessService>();
+            services.AddScoped<UserContext>();
 
             return services;
         }
