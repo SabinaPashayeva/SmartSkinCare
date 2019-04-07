@@ -80,7 +80,9 @@ namespace SmartSkinCare.BusinessLogic.Services
             var creamsOfUser = _creamService.GetCreamsOfUser();
             var typeOfSkin = _skinAnalyser.GetCurrentTypeOfSkin();
 
-            var creamsByType = creamsOfUser.Where(c => c.TypeOfSkin == typeOfSkin);
+            var creamsByType = creamsOfUser
+                .Where(c => c.TypeOfSkin == typeOfSkin)
+                .ToList();
 
             return creamsByType;
         }

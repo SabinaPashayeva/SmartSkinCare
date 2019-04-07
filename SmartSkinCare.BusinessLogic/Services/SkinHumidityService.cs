@@ -38,7 +38,7 @@ namespace SmartSkinCare.BusinessLogic.Services
         {
             if (string.IsNullOrEmpty(userId))
             {
-                return default(ICollection<SkinHumidityDTO>);
+                return default(IEnumerable<SkinHumidityDTO>);
             }
 
             var humiditiesOfUser = _humidityRepository
@@ -46,7 +46,7 @@ namespace SmartSkinCare.BusinessLogic.Services
 
             if (humiditiesOfUser == null)
             {
-                return default(ICollection<SkinHumidityDTO>);
+                return default(IEnumerable<SkinHumidityDTO>);
             }
 
             try
@@ -63,7 +63,7 @@ namespace SmartSkinCare.BusinessLogic.Services
             catch (Exception exc)
             {
                 Console.WriteLine(exc.StackTrace);
-                return default(ICollection<SkinHumidityDTO>);
+                return default(IEnumerable<SkinHumidityDTO>);
             }
         }
 
