@@ -23,19 +23,48 @@ namespace SmartSkinCare.API.Controllers
         }
 
         // GET api/creams
-        [ProducesResponseType(200)]
-        [ProducesResponseType(401)]
         [HttpGet]
         public ActionResult<IEnumerable<CreamDTO>> Get()
+        {
+            return new List<CreamDTO>(_creamService.GetCreamsOfUser());
+        }
+
+        // GET api/creams/5
+        [HttpGet("{id}")]
+        public ActionResult<CreamDTO> Get(int id)
+        {
+            return _creamService.GetCreamById(id);
+        }
+
+        // GET api/creams/all
+        [Authorize(Roles = "Admin")]
+        [HttpGet("all")]
+        public ActionResult<IEnumerable<CreamDTO>> GetAll()
         {
             return new List<CreamDTO>(_creamService.GetAllCreams());
         }
 
-        // POST api/values
+        // POST api/creams
         [HttpPost]
         public void Post([FromBody] CreamDTO cream)
         {
             _creamService.AddCream(cream);
+        }
+
+        // PUT api/creams/
+        [HttpPut]
+        public void Put([FromBody] CreamDTO cream)
+        {
+            _creamService.UpdateCream(cream);
+        }
+
+        // DELETE api/creams/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            var cream = _creamService.GetCreamById(id);
+
+            _creamService.RemoveCream(cream);
         }
     }
 }

@@ -60,8 +60,10 @@ namespace SmartSkinCare.DI
             services.AddScoped<ICreamRepository, CreamRepository>();
             services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<ICreamService, CreamService>();
+            services.AddScoped<IHumidityRepository, HumidityRepository>();
+            services.AddScoped<IOilinessRepository, OilinessRepository>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICreamService, CreamService>();
             services.AddScoped<IManufacturerService, ManufacturerService>();
             services.AddScoped<ISkinHumidityService, SkinHumidityService>();
             services.AddScoped<ISkinOilinessService, SkinOilinessService>();

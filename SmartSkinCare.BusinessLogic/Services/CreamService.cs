@@ -71,6 +71,11 @@ namespace SmartSkinCare.BusinessLogic.Services
             return allCreams.Where(c => c.UserId == _userContext.UserId).ToList();
         }
 
+        public CreamDTO GetCreamById(int id)
+        {
+            return GetAllCreams().FirstOrDefault(c => c.CreamId == id);
+        }
+
         private Cream GetEntityFromDto(CreamDTO creamDto)
         {
             var manufacturer = _manufacturerRepository
@@ -105,5 +110,6 @@ namespace SmartSkinCare.BusinessLogic.Services
 
             return dto;
         }
+
     }
 }

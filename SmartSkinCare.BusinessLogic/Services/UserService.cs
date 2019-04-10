@@ -17,7 +17,6 @@ namespace SmartSkinCare.BusinessLogic.Services
         public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-
         }
 
         public ApplicationUserDTO GetApplicationUserById(string userId)

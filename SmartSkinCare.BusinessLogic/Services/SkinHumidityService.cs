@@ -32,6 +32,8 @@ namespace SmartSkinCare.BusinessLogic.Services
             {
                 _humidityRepository.Create(humidity);
             }
+
+            _humidityRepository.Save();
         }
 
         public IEnumerable<SkinHumidityDTO> GetSkinHumiditiesForUser(string userId)
@@ -69,7 +71,7 @@ namespace SmartSkinCare.BusinessLogic.Services
 
         private SkinHumidity GetSkinHumidityFromDTO(SkinHumidityDTO humidityDTO)
         {
-            if (humidityDTO == null || humidityDTO.SkinHumidityId == 0)
+            if (humidityDTO == null)
             {
                 return default(SkinHumidity);
             }

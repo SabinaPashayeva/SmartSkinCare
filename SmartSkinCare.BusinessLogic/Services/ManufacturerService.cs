@@ -28,6 +28,8 @@ namespace SmartSkinCare.BusinessLogic.Services
             {
                 _manufacturerRepository.Create(manufacturer);
             }
+
+            _manufacturerRepository.Save();
         }
 
         public void UpdateManufacturer(ManufacturerDTO manufacturerDTO)
@@ -38,6 +40,8 @@ namespace SmartSkinCare.BusinessLogic.Services
             {
                 _manufacturerRepository.Update(manufacturer);
             }
+
+            _manufacturerRepository.Save();
         }
 
         public void DeleteManufacturer(ManufacturerDTO manufacturerDTO)
@@ -48,6 +52,8 @@ namespace SmartSkinCare.BusinessLogic.Services
             {
                 _manufacturerRepository.Delete(manufacturer);
             }
+
+            _manufacturerRepository.Save();
         }
 
         public IEnumerable<ManufacturerDTO> GetAllManufacturers()
@@ -59,7 +65,7 @@ namespace SmartSkinCare.BusinessLogic.Services
 
         private Manufacturer GetManufacturerFromDTO(ManufacturerDTO manufacturerDTO)
         {
-            if (manufacturerDTO == null || manufacturerDTO.ManufacturerId == 0)
+            if (manufacturerDTO == null)
             {
                 return default(Manufacturer);
             }

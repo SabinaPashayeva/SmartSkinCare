@@ -52,10 +52,11 @@ namespace SmartSkinCare.BusinessLogic.SkinAnalyser
 
             double lastHumidities = 0;
             var countForHumidities = 5;
+            var iterator = countForHumidities;
 
             foreach (var humidity in humiditiesOfUser)
             {
-                if (countForHumidities-- > 0)
+                if (iterator-- > 0)
                 {
                     lastHumidities += humidity.SkinHumidityValue;
                 }
@@ -71,10 +72,11 @@ namespace SmartSkinCare.BusinessLogic.SkinAnalyser
 
             double lastOilinesses = 0;
             var countForOilinesses = 5;
+            var iterator = countForOilinesses;
 
             foreach (var oiliness in oilinessOfUser)
             {
-                if (countForOilinesses-- > 0)
+                if (iterator-- > 0)
                 {
                     lastOilinesses += oiliness.SkinOilinessValue;
                 }

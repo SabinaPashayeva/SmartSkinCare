@@ -32,6 +32,8 @@ namespace SmartSkinCare.BusinessLogic.Services
             {
                 _oilinessRepository.Create(oiliness);
             }
+
+            _oilinessRepository.Save();
         }
 
         public IEnumerable<SkinOilinessDTO> GetSkinOilinessForUser(string userId)
@@ -69,7 +71,7 @@ namespace SmartSkinCare.BusinessLogic.Services
 
         private SkinOiliness GetSkinOilinessFromDTO(SkinOilinessDTO oilinessDTO)
         {
-            if (oilinessDTO == null || oilinessDTO.SkinOilinessId == 0)
+            if (oilinessDTO == null)
             {
                 return default(SkinOiliness);
             }

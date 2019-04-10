@@ -78,7 +78,7 @@ namespace SmartSkinCare.BusinessLogic.Services
         public IEnumerable<CreamDTO> GetRecommendedCreamsBySkinType()
         {
             var creamsOfUser = _creamService.GetCreamsOfUser();
-            var typeOfSkin = _skinAnalyser.GetCurrentTypeOfSkin();
+            var typeOfSkin = _skinAnalyser.GetCurrentTypeOfSkin().ToLower();
 
             var creamsByType = creamsOfUser
                 .Where(c => c.TypeOfSkin == typeOfSkin)
