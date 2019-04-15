@@ -19,7 +19,7 @@ namespace SmartSkinCare.DataAccessLayer.Abstractions
             _appContext.Set<T>().Add(entity);
         }
 
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             _appContext.Set<T>().Remove(entity);
         }

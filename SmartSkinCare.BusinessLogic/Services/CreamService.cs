@@ -78,6 +78,8 @@ namespace SmartSkinCare.BusinessLogic.Services
 
         private Cream GetEntityFromDto(CreamDTO creamDto)
         {
+            creamDto.UserId = _userContext.UserId;
+
             var manufacturer = _manufacturerRepository
                .FindByCondition(m => m.Name == creamDto.ManufacturerName)
                .FirstOrDefault();
