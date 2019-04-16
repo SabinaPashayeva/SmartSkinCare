@@ -33,7 +33,9 @@ namespace SmartSkinCare.BusinessLogic.Services
             var userDto = new ApplicationUserDTO
             {
                 UserId = user.Id,
-                DateOfBirth = user.DateOfBirth
+                DateOfBirth = user.DateOfBirth,
+                UserName = user.UserName,
+                Email = user.Email
             };
 
             return userDto;

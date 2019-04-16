@@ -5,5 +5,7 @@ namespace SmartSkinCare.BusinessLogic.Models
     {
         public string UserId { get; set; }
         public DateTimeOffset DateOfBirth { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
     }
 }
