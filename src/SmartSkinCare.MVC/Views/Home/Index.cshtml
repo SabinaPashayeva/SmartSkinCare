@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<header class="header">
+    <div class="container" style="font-weight: bolder" id='about'>
+        <div class="description rounded">
+            <h3 data-l10n-id="hello">
+                <font data-l10n-id="hello">Welcome to Smart Skin Care!</font>
+                <p data-l10n-id="productDesc">
+                    A software system for automated skin care.
+                </p>
+                <button class="btn btn-outline-dark" data-l10n-id="see">See more</button>
+                </font>
+            </h3>
+        </div>
+    </div>
+</header>
+
+<!-- Product section -->
+<div class="product" id="product">
+    <div class="row" style="width:100%;">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <img src="~/images/phone.png" height="500">
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 desc" style="margin-right: -5%; padding-right: 0">
+            <h3 style="margin-right: 0; margin-top: 10%"><font data-l10n-id="ourProduct">Our Product</font></h3>
+            <p style="margin-right: 0" data-l10n-id="productDescription">
+                The product will offer users a system for proper
+                skin care. The system will
+                allow users to get up-to-date data on their skin based on analyzes that can be done on their own,
+                quickly and conveniently. It will include measurements of skin indicators and an automated process
+                for sending these data to the server, processing existing tools for the user, and analyzing results
+                with the ability to display data, formulate recommendations and other features through a mobile and
+                web application. Once popular, new features will be added to the existing system.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Contact form -->
+<div class="contact-form" id="contact">
+    <div class="container" style="margin-bottom: 10%">
+        <form>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h1 data-l10n-id="touch">Get in Touch</h1>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 right">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Name" name="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="YourEmail@email.com" name="email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control form-control-lg">
+
+         </textarea>
+                    </div>
+                    <button class="btn btn-secondary btn-block" data-l10n-id="send">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -35,5 +35,12 @@ namespace SmartSkinCare.API.Controllers
         {
             return _userService.GetApplicationUserById(_userContext.UserId);
         }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("all")]
+        public ActionResult<IEnumerable<ApplicationUserDTO>> GetAllUsers()
+        {
+            return new List<ApplicationUserDTO>(_userService.GetAllUsers());
+        }
     }
 }

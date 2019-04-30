@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -35,10 +36,24 @@ namespace SmartSkinCare.BusinessLogic.Services
                 UserId = user.Id,
                 DateOfBirth = user.DateOfBirth,
                 UserName = user.UserName,
-                Email = user.Email
+                Email = user.Email,
+                Role = user.Role
             };
 
             return userDto;
+        }
+
+        public IEnumerable<ApplicationUserDTO> GetAllUsers()
+        {
+            var userIds = _userRepository.FindAll().Select(s => s.Id);
+            var users = new List<ApplicationUserDTO>();
+
+            foreach (var id in userIds)
+            {
+                users.Add(GetApplicationUserById(id));
+            }
+
+            return users;
         }
     }
 }

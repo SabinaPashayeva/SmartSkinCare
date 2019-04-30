@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartSkinCare.BusinessLogic\SmartSkinCare.BusinessLogic.csproj" />
+    <ProjectReference Include="..\SmartSkinCare.DI\SmartSkinCare.DI.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\images\skinCare.jpg" />
+    <Content Remove="wwwroot\images\green-tea.png" />
+    <Content Remove="wwwroot\images\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\skinCare.jpg" />
+    <None Include="wwwroot\images\green-tea.png" />
+    <None Include="wwwroot\images\phone.png" />
+  </ItemGroup>
+</Project>
